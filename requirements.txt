@@ -1,0 +1,42 @@
+# --- Web framework ---
+fastapi==0.115.4
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+sse-starlette==2.1.3
+pydantic==2.9.2
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# Pin httpx<0.28 to keep groq/openai/langchain wrappers happy.
+# httpx 0.28 removed the 'proxies' kwarg those clients still pass.
+httpx>=0.27,<0.28
+
+# --- LangChain core + integrations ---
+langchain==0.3.7
+langchain-community==0.3.7
+langchain-text-splitters==0.3.2
+langchain-openai==0.2.8
+langchain-google-genai==2.0.4
+langchain-groq==0.2.1
+langchain-huggingface==0.1.2
+
+# --- Vector DB ---
+chromadb==0.5.18
+langchain-chroma==0.1.4
+
+# --- Embeddings (multilingual, runs on CPU) ---
+sentence-transformers==3.2.1
+
+# --- PDF + OCR ---
+pypdf==5.0.1
+pdf2image==1.17.0
+pytesseract==0.3.13
+Pillow==11.0.0
+
+# --- Whisper STT ---
+groq==0.11.0
+faster-whisper==1.0.3
+
+# --- Test-only (used by test_e2e.py) ---
+requests==2.32.3
+reportlab==4.2.5
